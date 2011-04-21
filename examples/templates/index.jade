@@ -3,7 +3,7 @@ html(lang="en")
   head
     title iStyle
     meta(name="viewport", content="width = device-width, initial-scale = 1.0, user-scalable = no, maximum-scale = 1.0")
-    != mash("common", "css", debug)
+    link(rel="stylesheet",href="istyle.css")
   body
     .Page
       header
@@ -12,7 +12,7 @@ html(lang="en")
         button.right Right
       section#wrapper(role='content')
         ul.List
-          li Test 1
+          li Test 1 <br>woot
           li Test 2
           li Test 4
           li Test 5
@@ -26,8 +26,6 @@ html(lang="en")
           li Test 6
           li Test 6
       footer Footer
-    != mash("common", "js", debug)
+    script(src="iscroll-lite.js")
     script
-      $(function() {
-        new iScroll("wrapper"); 
-      });
+      new iScroll("wrapper"); 

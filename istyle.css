@@ -29,7 +29,7 @@ button { -webkit-appearance: none; border: 0; background: 0; }
 
 
 .List { list-style: none; margin: 0; padding: 0; -webkit-box-flex: 1}
-    .List li { margin: 0; font-family: "Helvetica Neue"; font-size: 20px; font-weight: bold; border-bottom: 1px solid #e0e0e0; padding: 10px 0; height: 25px; line-height: 25px; }
+    .List li { margin: 0; font-family: "Helvetica Neue"; font-size: 20px; font-weight: bold; border-bottom: 1px solid #e0e0e0; padding: 10px 0; line-height: 25px; padding-left: 10px; }
 		.List li.header { height: 18px !important; line-height: 18px; font-size: 12px; background: -webkit-gradient(linear, left top, left bottom, from(#98a5af), to(#b6bdc3)); color: #fff; border: 1px solid #95a0a8; padding: 0 10px; margin: 0; }
         .List li .item { -webkit-box-flex: 1 }
 		.List li .name { height: 25px; overflow: hidden; }

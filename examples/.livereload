@@ -1,8 +1,8 @@
 # Lines starting with pound sign (#) are ignored.
 
 # additional extensions to monitor
+#config.exts << 'haml'
 config.exts << 'jade'
-config.exts << 'coffee'
 
 # exclude files with NAMES matching this mask
 #config.exclusions << '~*'
