@@ -1,9 +1,10 @@
 !!! 5
-html(lang="en")
+html
   head
     title iStyle
+    link(rel="stylesheet", href="istyle.css")
+    script(src="live.js")
     meta(name="viewport", content="width = device-width, initial-scale = 1.0, user-scalable = no, maximum-scale = 1.0")
-    link(rel="stylesheet",href="istyle.css")
   body
     .Page
       header
@@ -12,10 +13,14 @@ html(lang="en")
         button.right Right
       section#wrapper(role='content')
         ul.List
-          li Test 1 <br>woot
+          li Test 1
+            a.Button Button
           li Test 2
+            button.Important Delete
           li Test 4
+            button Button
           li Test 5
+            button.Highlight Highlighted
           li Test 6
           li Test 6
           li Test 6
@@ -26,6 +31,3 @@ html(lang="en")
           li Test 6
           li Test 6
       footer Footer
-    script(src="iscroll-lite.js")
-    script
-      new iScroll("wrapper"); 

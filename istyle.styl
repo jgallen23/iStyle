@@ -1,0 +1,177 @@
+$header-color = #96a6ba
+$button-color = #6e89ae
+$important-button-color = #e949540 
+$highlight-button-color = #4d7ee3
+
+header-bg(color)
+  background: -webkit-linear-gradient(top, lighten(color, 10) 0%, lighten(color, 15) 2%, color 3%, darken(color, 5) 49%, darken(color, 8) 51%, darken(color, 15) 97%, darken(color, 50) 100%)
+
+button(color = $button-color)
+  background: -webkit-linear-gradient(top, lighten(color, 2) 0%, darken(color, 2) 49%, darken(color, 5) 51%,darken(color, 15) 100%);
+  display: inline-block
+  font-size: 12px
+  font-weight: bold
+  color: #fff
+  text-shadow: 0 -1px 0 rgba(0,0,0, 0.4)
+  padding: 0px 12px
+  height: 26px
+  border: 1px solid rgba(0,0,0, 0.4)
+  -webkit-box-shadow: 0 1px 0 rgba(255,255,255, 0.35), inset 0 0.5px 1px rgba(0,0,0, 0.25)
+  -webkit-border-radius: 5px
+  line-height: 25px 
+
+html,body
+  height: 100%
+
+body
+  margin: 0
+  padding: 0
+  font-size: 13px
+  font-family: 'Arial'
+
+*
+  -webkit-tap-highlight-color: rgba(0,0,0,0)
+
+button
+  -webkit-appearance: none
+  border: 0
+  background: 0
+
+.HBox
+  display: -webkit-box
+
+.Release .DebugOnly
+  display: none
+
+.Page
+  width: 100%
+  height: 100%
+  display: -webkit-box
+  -webkit-box-orient: vertical
+  -webkit-box-align: stretch
+  -webkit-transform: translateX(100%)
+
+  header
+    line-height: 42px
+    color: #fff
+    text-align: center
+    height: 42px
+    border: 1px solid #cad6e2
+    border-bottom-color: #22374a
+    border-right: 0
+    border-left: 0
+    header-bg($header-color)
+
+    h1
+      font-size: 20px
+      color: #fff
+      text-shadow: 0 -1px 0 rgba(0,0,0, 0.4)
+      margin: 0
+
+    .right
+      right: 10px
+
+    .left
+      left: 10px
+
+    button
+      position: absolute
+      top: 9px
+      button()
+
+
+    button.large
+      font-size: 20px
+      line-height: 8px
+
+    button.highlight
+      background: -webkit-gradient(linear, left top, left bottom, from(#4f7fe3), to(#2260dd), color-stop(0.5, #487ae2), color-stop(0.51, #2260dd))
+
+    button:active
+      background: -webkit-gradient(linear, left top, left bottom, from(#5f7187), to(#2a476a), color-stop(0.5, #334f71), color-stop(0.51, #1b3254))
+
+  footer
+    height: 20px
+
+  [role='content']
+    -webkit-box-flex: 1
+    overflow: hidden
+
+
+.Page:first-child
+  -webkit-transform: translateX(0)
+
+.List
+  list-style: none
+  margin: 0
+  padding: 0
+  -webkit-box-flex: 1
+
+  li
+    margin: 0
+    font-family: "Helvetica Neue"
+    font-size: 20px
+    font-weight: bold
+    border-bottom: 1px solid #e0e0e0
+    padding: 10px 0
+    line-height: 25px
+    padding-left: 10px
+
+  li.header
+    height: 18px
+    line-height: 18px
+    font-size: 12px
+    background: -webkit-gradient(linear, left top, left bottom, from(#98a5af), to(#b6bdc3))
+    color: #fff
+    border: 1px solid #95a0a8
+    padding: 0 10px
+    margin: 0
+
+  li .item
+    -webkit-box-flex: 1
+
+  li .name
+    height: 25px
+    overflow: hidden
+
+  li .comment
+    font-size: 17px
+    color: #385487
+    font-weight: normal
+
+  li .details
+    background: url(../images/details.png)
+    height: 24px
+    width: 24px
+    background-size: 24px 24px
+    margin-right: 5px
+
+button.Important
+  display: block
+  font-size: 12px
+  font-weight: bold
+  color: #fff
+  text-shadow: 0 -1px 0 rgba(0,0,0, 0.4)
+  padding: 0px 12px
+  height: 26px
+  border: 1px solid rgba(0,0,0, 0.4)
+  -webkit-box-shadow: 0 1px 0 rgba(255,255,255, 0.35), inset 0 0.5px 1px rgba(0,0,0, 0.25)
+  -webkit-border-radius: 5px
+  background: -webkit-gradient(linear, left top, left bottom, from(#f0838b), to(#ed1414), color-stop(0.5, #e73441), color-stop(0.51, #e10111))
+  line-height: 25px
+
+button.Important:active
+  background: -webkit-gradient(linear, left top, left bottom, from(#c36a71), to(#b61010), color-stop(0.5, #b4000d), color-stop(0.51, #b62832))
+
+
+.Button, 
+button
+  button()
+
+.Button.Important,
+button.Important
+  button($important-button-color)
+
+.Button.Highlight,
+button.Highlight
+  button($highlight-button-color)

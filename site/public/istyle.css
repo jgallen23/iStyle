@@ -1,0 +1,30 @@
+html,body{height:100%}
+body{margin:0;padding:0;font-size:13px;font-family:"Arial"}
+*{-webkit-tap-highlight-color:rgba(0,0,0,0)}
+button{-webkit-appearance:none;border:0;background:0}
+.HBox{display:-webkit-box}
+.Release .DebugOnly{display:none}
+.Page{width:100%;height:100%;display:-webkit-box;-webkit-box-orient:vertical;-webkit-box-align:stretch;-webkit-transform:translateX(100%);}
+.Page header{line-height:42px;color:#fff;text-align:center;height:42px;border:1px solid #cad6e2;border-bottom-color:#22374a;border-right:0;border-left:0;background:-webkit-linear-gradient(top,#b5c0ce 0,#c4cdd8 2%,#96a6ba 3%,#8799b0 49%,#7d91aa 51%,#687f9c 97%,#202831 100%);}
+.Page header h1{font-size:20px;color:#fff;text-shadow:0 -1px 0 rgba(0,0,0,0.4);margin:0}
+.Page header .right{right:10px}
+.Page header .left{left:10px}
+.Page header button{position:absolute;top:9px;background:-webkit-linear-gradient(top,#758eb2 0,#6784aa 49%,#5e7ca5 51%,#4a6385 100%);display:inline-block;font-size:12px;font-weight:bold;color:#fff;text-shadow:0 -1px 0 rgba(0,0,0,0.4);padding:0 12px;height:26px;border:1px solid rgba(0,0,0,0.4);-webkit-box-shadow:0 1px 0 rgba(255,255,255,0.35),inset 0 .5px 1px rgba(0,0,0,0.25);-webkit-border-radius:5px;line-height:25px}
+.Page header button.large{font-size:20px;line-height:8px}
+.Page header button.highlight{background:-webkit-gradient(linear,left top,left bottom,from(#4f7fe3),to(#2260dd),color-stop(.5,#487ae2),color-stop(.51,#2260dd))}
+.Page header button:active{background:-webkit-gradient(linear,left top,left bottom,from(#5f7187),to(#2a476a),color-stop(.5,#334f71),color-stop(.51,#1b3254))}
+.Page footer{height:20px}
+.Page [role="content"]{-webkit-box-flex:1;overflow:hidden}
+.Page:first-child{-webkit-transform:translateX(0)}
+.List{list-style:none;margin:0;padding:0;-webkit-box-flex:1;}
+.List li{margin:0;font-family:"Helvetica Neue";font-size:20px;font-weight:bold;border-bottom:1px solid #e0e0e0;padding:10px 0;line-height:25px;padding-left:10px}
+.List li.header{height:18px;line-height:18px;font-size:12px;background:-webkit-gradient(linear,left top,left bottom,from(#98a5af),to(#b6bdc3));color:#fff;border:1px solid #95a0a8;padding:0 10px;margin:0}
+.List li .item{-webkit-box-flex:1}
+.List li .name{height:25px;overflow:hidden}
+.List li .comment{font-size:17px;color:#385487;font-weight:normal}
+.List li .details{background:url("../images/details.png");height:24px;width:24px;background-size:24px 24px;margin-right:5px}
+button.Important{display:block;font-size:12px;font-weight:bold;color:#fff;text-shadow:0 -1px 0 rgba(0,0,0,0.4);padding:0 12px;height:26px;border:1px solid rgba(0,0,0,0.4);-webkit-box-shadow:0 1px 0 rgba(255,255,255,0.35),inset 0 .5px 1px rgba(0,0,0,0.25);-webkit-border-radius:5px;background:-webkit-gradient(linear,left top,left bottom,from(#f0838b),to(#ed1414),color-stop(.5,#e73441),color-stop(.51,#e10111));line-height:25px}
+button.Important:active{background:-webkit-gradient(linear,left top,left bottom,from(#c36a71),to(#b61010),color-stop(.5,#b4000d),color-stop(.51,#b62832))}
+.Button,button{background:-webkit-linear-gradient(top,#758eb2 0,#6784aa 49%,#5e7ca5 51%,#4a6385 100%);display:inline-block;font-size:12px;font-weight:bold;color:#fff;text-shadow:0 -1px 0 rgba(0,0,0,0.4);padding:0 12px;height:26px;border:1px solid rgba(0,0,0,0.4);-webkit-box-shadow:0 1px 0 rgba(255,255,255,0.35),inset 0 .5px 1px rgba(0,0,0,0.25);-webkit-border-radius:5px;line-height:25px}
+.Button.Important,button.Important{background:-webkit-linear-gradient(top,#ea5d52 0,#e84b40 49%,#e63f32 51%,#cd2519 100%);display:inline-block;font-size:12px;font-weight:bold;color:#fff;text-shadow:0 -1px 0 rgba(0,0,0,0.4);padding:0 12px;height:26px;border:1px solid rgba(0,0,0,0.4);-webkit-box-shadow:0 1px 0 rgba(255,255,255,0.35),inset 0 .5px 1px rgba(0,0,0,0.25);-webkit-border-radius:5px;line-height:25px}
+.Button.Highlight,button.Highlight{background:-webkit-linear-gradient(top,#5684e4 0,#4478e2 49%,#376ee0 51%,#1f55c5 100%);display:inline-block;font-size:12px;font-weight:bold;color:#fff;text-shadow:0 -1px 0 rgba(0,0,0,0.4);padding:0 12px;height:26px;border:1px solid rgba(0,0,0,0.4);-webkit-box-shadow:0 1px 0 rgba(255,255,255,0.35),inset 0 .5px 1px rgba(0,0,0,0.25);-webkit-border-radius:5px;line-height:25px}
