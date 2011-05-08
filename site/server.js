@@ -3,57 +3,40 @@ var app = express.createServer();
 var path = require("path");
 var fs = require("fs");
 var stylus = require("stylus");
+var iStyle = require("../lib/istyle");
 
 var port = 3005;
 
 app.configure(function() {
-	app.use(express.methodOverride());
-	app.use(express.bodyParser());
-	app.use(app.router);
+  app.use(express.methodOverride());
+  app.use(express.bodyParser());
+  app.use(app.router);
 
-	app.set("views", __dirname+"/templates");
+  app.set("views", __dirname+"/templates");
 
-	/*
-	var stylusCompile = function(str, path) {
-		console.log(arguments);
-		return stylus(str).set('filename', path).set('compress', true);
-	};
+  app.use(express.static(__dirname+"/public"));
 
-	app.use(stylus.middleware({
-		src: path.join(__dirname, "../src"),
-		dest: __dirname + '/public',
-		compile: stylusCompile
-	}));
-	*/
-
-
-	app.use(express.static(__dirname+"/public"));
-
-	app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
+  app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
 });
 
 
 app.get("/", function(req, res) { 
+  color = req.query.color || "iphone";
+  locals = { 
+  };
 
-	locals = { 
-	};
-
-	res.render("index.jade", { layout: false, locals: locals });
+  res.render("index.jade", { color: color, layout: false, locals: locals });
 });
 
 app.get("/istyle.css", function(req, res) {
-	color = req.query.color || "iphone"
-	file = path.join(__dirname, "../src/istyle.styl")
+  color = req.query.color;
+  istyle = new iStyle(color);
+  istyle.compress = false;
 
-	fs.readFile(file, "utf8", function(err, data) {
-		res.contentType("text/css");
-		stylus(data)
-			.set("filename", file)
-			.import(color)
-			.render(function(err, css) {
-				res.send(css)
-			})
-	});
+  istyle.generate(function(css) {
+    res.contentType("text/css");
+    res.send(css);
+  });
 
 });
 

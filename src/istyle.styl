@@ -1,9 +1,13 @@
+$highlight-button-color = saturate($button-color, 30) 
 
 header-bg(color)
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,lighten(color, 10)), color-stop(2%,lighten(color, 15)), color-stop(3%,color), color-stop(49%, darken(color, 5)), color-stop(51%, darken(color, 8)), color-stop(97%, darken(color, 15)), color-stop(100%, darken(color, 50)))
 
-button(color = $button-color)
+button-bg(color= $button-color)
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, lighten(color, 2)), color-stop(49%, darken(color, 2)), color-stop(51%, darken(color, 5)), color-stop(100%, darken(color, 15)))
+
+button(color = $button-color)
+  button-bg(color)
   display: inline-block
   font-size: 12px
   font-weight: bold
@@ -32,12 +36,6 @@ button
   -webkit-appearance: none
   border: 0
   background: 0
-
-.HBox
-  display: -webkit-box
-
-.Release .DebugOnly
-  display: none
 
 .Page
   width: 100%
@@ -73,18 +71,10 @@ button
     button
       position: absolute
       top: 9px
-      button()
-
 
     button.large
       font-size: 20px
       line-height: 8px
-
-    button.highlight
-      background: -webkit-gradient(linear, left top, left bottom, from(#4f7fe3), to(#2260dd), color-stop(0.5, #487ae2), color-stop(0.51, #2260dd))
-
-    button:active
-      background: -webkit-gradient(linear, left top, left bottom, from(#5f7187), to(#2a476a), color-stop(0.5, #334f71), color-stop(0.51, #1b3254))
 
   footer
     height: 20px
@@ -142,32 +132,26 @@ button
     background-size: 24px 24px
     margin-right: 5px
 
-button.Important
-  display: block
-  font-size: 12px
-  font-weight: bold
-  color: #fff
-  text-shadow: 0 -1px 0 rgba(0,0,0, 0.4)
-  padding: 0px 12px
-  height: 26px
-  border: 1px solid rgba(0,0,0, 0.4)
-  -webkit-box-shadow: 0 1px 0 rgba(255,255,255, 0.35), inset 0 0.5px 1px rgba(0,0,0, 0.25)
-  -webkit-border-radius: 5px
-  background: -webkit-gradient(linear, left top, left bottom, from(#f0838b), to(#ed1414), color-stop(0.5, #e73441), color-stop(0.51, #e10111))
-  line-height: 25px
-
-button.Important:active
-  background: -webkit-gradient(linear, left top, left bottom, from(#c36a71), to(#b61010), color-stop(0.5, #b4000d), color-stop(0.51, #b62832))
-
-
 .Button, 
 button
   button()
+
+.Button:active,
+button:active
+  button-bg(darken($button-color, 20))
 
 .Button.Important,
 button.Important
   button($important-button-color)
 
+.Button.Important:active,
+button.Important:active
+  button-bg(darken($important-button-color, 20))
+
 .Button.Highlight,
 button.Highlight
   button($highlight-button-color)
+
+.Button.Highlight:active,
+button.Highlight:active
+  button-bg(darken($highlight-button-color, 20))
