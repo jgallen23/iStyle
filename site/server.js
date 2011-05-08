@@ -20,7 +20,7 @@ app.configure(function() {
 
 	var stylus = require("stylus");
 	app.use(stylus.middleware({
-		src: path.join(__dirname, "../"),
+		src: path.join(__dirname, "../src"),
 		dest: __dirname + '/public',
 		compile: stylusCompile
 	}));
