@@ -1,10 +1,9 @@
-@import "iphone"
 
 header-bg(color)
-  background: -webkit-linear-gradient(top, lighten(color, 10) 0%, lighten(color, 15) 2%, color 3%, darken(color, 5) 49%, darken(color, 8) 51%, darken(color, 15) 97%, darken(color, 50) 100%)
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,lighten(color, 10)), color-stop(2%,lighten(color, 15)), color-stop(3%,color), color-stop(49%, darken(color, 5)), color-stop(51%, darken(color, 8)), color-stop(97%, darken(color, 15)), color-stop(100%, darken(color, 50)))
 
 button(color = $button-color)
-  background: -webkit-linear-gradient(top, lighten(color, 2) 0%, darken(color, 2) 49%, darken(color, 5) 51%,darken(color, 15) 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, lighten(color, 2)), color-stop(49%, darken(color, 2)), color-stop(51%, darken(color, 5)), color-stop(100%, darken(color, 15)))
   display: inline-block
   font-size: 12px
   font-weight: bold

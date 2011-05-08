@@ -2,6 +2,7 @@ var express = require("express");
 var app = express.createServer();
 var path = require("path");
 var fs = require("fs");
+var stylus = require("stylus");
 
 var port = 3005;
 
@@ -12,18 +13,18 @@ app.configure(function() {
 
 	app.set("views", __dirname+"/templates");
 
-
+	/*
 	var stylusCompile = function(str, path) {
 		console.log(arguments);
 		return stylus(str).set('filename', path).set('compress', true);
 	};
 
-	var stylus = require("stylus");
 	app.use(stylus.middleware({
 		src: path.join(__dirname, "../src"),
 		dest: __dirname + '/public',
 		compile: stylusCompile
 	}));
+	*/
 
 
 	app.use(express.static(__dirname+"/public"));
@@ -38,6 +39,22 @@ app.get("/", function(req, res) {
 	};
 
 	res.render("index.jade", { layout: false, locals: locals });
+});
+
+app.get("/istyle.css", function(req, res) {
+	color = req.query.color || "iphone"
+	file = path.join(__dirname, "../src/istyle.styl")
+
+	fs.readFile(file, "utf8", function(err, data) {
+		res.contentType("text/css");
+		stylus(data)
+			.set("filename", file)
+			.import(color)
+			.render(function(err, css) {
+				res.send(css)
+			})
+	});
+
 });
 
 app.listen(port, "0.0.0.0");
